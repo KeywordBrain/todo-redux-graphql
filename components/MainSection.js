@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import TodoItem from './TodoItem'
 import Footer from './Footer'
 import { SHOW_ALL, SHOW_MARKED, SHOW_UNMARKED } from '../constants/TodoFilters'
+import createContainer from './Data'
 
 const TODO_FILTERS = {
   [SHOW_ALL]: () => true,
@@ -9,7 +10,7 @@ const TODO_FILTERS = {
   [SHOW_MARKED]: todo => todo.marked
 }
 
-export default class MainSection extends Component {
+class MainSectionUI extends Component {
   static propTypes = {
     todos: PropTypes.array.isRequired,
     actions: PropTypes.object.isRequired
@@ -82,3 +83,8 @@ export default class MainSection extends Component {
     }
   }
 }
+
+// TODO: actual GraphQL Query
+export default createContainer(MainSectionUI, {
+  todos: 'graphql query goes here'
+})

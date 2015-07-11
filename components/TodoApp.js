@@ -8,7 +8,7 @@ import * as TodoActions from '../actions/TodoActions'
 export default class TodoApp extends Component {
   render() {
     return (
-      <Connector select={state => ({ todos: state.todos })}>
+      <Connector>
         {this.renderChild}
       </Connector>
     )
