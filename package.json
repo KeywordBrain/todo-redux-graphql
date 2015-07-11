@@ -1,0 +1,19 @@
+{
+  "name": "todo-redux-graphql",
+  "version": "1.0.0",
+  "description": "Explorations using GraphQL with Redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeywordBrain/todo-redux-graphql.git"
+  },
+  "author": "@mxlje & @davidpfahler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KeywordBrain/todo-redux-graphql/issues"
+  },
+  "homepage": "https://github.com/KeywordBrain/todo-redux-graphql#readme"
+}
