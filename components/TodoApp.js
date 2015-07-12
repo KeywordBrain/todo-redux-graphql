@@ -14,6 +14,12 @@ export default class TodoApp extends Component {
   // MainSection is a Data Component. Hence,
   // it takes care of getting the required todos
   // itself. No need to pass them down as props.
+  // We do need, however, to pass down the bound
+  // action creators.
+  // TODO: Investigate if it wouldn't be better to
+  // not pass down action creators and instead have
+  // the components that want to use them require them
+  // individually.
   render () {
     const { dispatch } = this.props
     const actions = bindActionCreators(TodoActions, dispatch)
