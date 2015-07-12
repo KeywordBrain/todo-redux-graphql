@@ -15,11 +15,11 @@ export default function data(state = initialState, action) {
       queries: [...state.queries]
     }
 
-    let index = newState.queries.indexOf(action.query)
+    let index = newState.queries.indexOf(action.queries)
     if (~index) {
       newState.queries[index] = action.res
     } else {
-      newState.queries.push(action.query)
+      newState.queries.push(action.queries)
       newState.res.push(action.res)
     }
     return newState
