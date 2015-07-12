@@ -6,3 +6,5 @@ export const MARK_ALL = 'MARK_ALL'
 export const CLEAR_MARKED = 'CLEAR_MARKED'
 
 export const GET_TODOS = 'GET_TODOS'
+
+export const RECEIVE = 'RECEIVE'

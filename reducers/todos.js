@@ -13,7 +13,6 @@ const initialState = {
 }
 
 export default function todos(state = initialState, action) {
-  console.log('action', action)
 
   switch (action.type) {
   case ADD_TODO:
@@ -53,7 +52,6 @@ export default function todos(state = initialState, action) {
     return state.data.filter(todo => todo.marked === false)
 
   case GET_TODOS:
-    debugger
     let newState = {
       ...state,
       data: [...state.data],
@@ -67,7 +65,6 @@ export default function todos(state = initialState, action) {
       newState.queries.push(action.query)
       newState.data.push(action.data)
     }
-    debugger
     return newState
 
   default:

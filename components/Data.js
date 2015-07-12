@@ -4,11 +4,8 @@ import { executeQuery } from '../actions/DataActions.js'
 
 class _Data extends Component {
   render () {
-    if (this.props && this.props.data) {
-
-      return this.props.children.map(Child => {
-        return <Child {...this.props.data} />
-      })
+    if (this.props && this.props.data && this.Component) {
+      return <this.Component {...this.props} {...this.props.data} />
     }
 
     return <div>No data yet</div>
@@ -18,31 +15,35 @@ class _Data extends Component {
     // TODO: pass params to executeQuery as second argument
     // to keep track of changed params for same query and dispose
     // of old observable
-    executeQuery(this.query)(this.props.dispatch)
+    executeQuery(this.queries)(this.props.dispatch)
   }
 }
 
-export default function (Component, query) {
+export default function (Component, options) {
+  const { queries } = options
   @connect(state => {
-    debugger
-    if (!state.data) {
-      return {}  
-    };
-
-    const index = state.queries.indexOf(query)
-    let localState = {
-      data: state.data[index] || null
+    if (!state.data || !state.data.res) {
+      return {}
     }
-    debugger
+
+    state = state.data
+    const index = state.queries.indexOf(queries)
+    if (!~index) {
+      return {}
+    }
+    let localState = {
+      data: state.res[index] || null
+    }
     return localState
   })
   class Data extends _Data {
-    static query = query
+    static queries = queries
 
     constructor () {
       super()
 
-      this.query = query
+      this.Component = Component
+      this.queries = queries
     }
   }
   return Data
