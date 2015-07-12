@@ -1,3 +1,6 @@
+// The outermost component wraps the actual App in
+// the redu Provider.
+
 import React, { Component } from 'react'
 import TodoApp from './TodoApp'
 import { createRedux } from 'redux'
@@ -7,7 +10,7 @@ import * as reducers from '../reducers'
 const redux = createRedux(reducers)
 
 export default class App extends Component {
-  render() {
+  render () {
     return (
       <Provider redux={redux}>
         {() => <TodoApp />}
