@@ -1,5 +1,6 @@
-var path = require('path');
-var webpack = require('webpack');
+var path = require('path')
+var webpack = require('webpack')
+var WebpackErrorNotificationPlugin = require('webpack-error-notification')
 
 module.exports = {
   devtool: 'eval',
@@ -15,7 +16,8 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new WebpackErrorNotificationPlugin()
   ],
   resolve: {
     extensions: ['', '.js']
@@ -30,4 +32,4 @@ module.exports = {
       loaders: ['style', 'raw']
     }]
   }
-};
+}
