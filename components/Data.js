@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'redux/react'
-import { executeQuery } from '../actions/DataActions.js'
+import { executeQueries } from '../actions/DataActions.js'
 
 class _Data extends Component {
   render () {
@@ -12,10 +12,10 @@ class _Data extends Component {
   }
 
   componentWillMount () {
-    // TODO: pass params to executeQuery as second argument
+    // TODO: pass params to executeQueries as second argument
     // to keep track of changed params for same query and dispose
     // of old observable
-    executeQuery(this.queries)(this.props.dispatch)
+    executeQueries(this.queries)(this.props.dispatch)
   }
 }
 

@@ -1,11 +1,11 @@
-import { resolveQueries } from './exchange.js'
+import { execQueries } from './exchange.js'
 import { RECEIVE } from '../constants/ActionTypes'
 
 // this has to receive the params as well as second arg
 // so we will be able to dispose of outdated observables
-export function executeQuery (query) {
+export function executeQueries (query) {
   return dispatch => {
-    resolveQueries(query).subscribe(res => {
+    execQueries(query).subscribe(res => {
       dispatch({type: RECEIVE, res, query})
     })
   }

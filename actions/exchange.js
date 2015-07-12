@@ -1,6 +1,6 @@
 import Rx from 'rx'
 
-export function resolveQueries (queries) {
+export function execQueries (queries) {
   // return observable here
   let res = {}
   Object.keys(queries).forEach(key => {
