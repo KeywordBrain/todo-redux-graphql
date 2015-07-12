@@ -7,22 +7,20 @@ import { Connector } from 'redux/react'
 import Header from '../components/Header'
 import MainSection from '../components/MainSection'
 import * as TodoActions from '../actions/TodoActions'
+import { connect } from 'redux/react'
 
+@connect(state => state)
 export default class TodoApp extends Component {
+  // MainSection is a Data Component. Hence,
+  // it takes care of getting the required todos
+  // itself. No need to pass them down as props.
   render () {
-    return (
-      <Connector>
-        {this.renderChild}
-      </Connector>
-    )
-  }
-
-  renderChild ({ todos, dispatch }) {
+    const { dispatch } = this.props
     const actions = bindActionCreators(TodoActions, dispatch)
     return (
       <div>
         <Header addTodo={actions.addTodo} />
-        <MainSection todos={todos} actions={actions} />
+        <MainSection actions={actions} />
       </div>
     )
   }
