@@ -1,3 +1,6 @@
+// TODO: Remove this file as soon as functionality
+// is ported over to the GraphQL/data reducer.
+
 import { ADD_TODO, DELETE_TODO, EDIT_TODO, MARK_TODO, MARK_ALL, CLEAR_MARKED, GET_TODOS } from '../constants/ActionTypes'
 
 // old
