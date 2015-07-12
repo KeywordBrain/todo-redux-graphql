@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import TodoItem from './TodoItem'
 import Footer from './Footer'
 import { SHOW_ALL, SHOW_MARKED, SHOW_UNMARKED } from '../constants/TodoFilters'
-import createContainer from './Data'
+import createContainer from './createContainer'
 
 const TODO_FILTERS = {
   [SHOW_ALL]: () => true,

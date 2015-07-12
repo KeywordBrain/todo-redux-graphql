@@ -1,4 +1,4 @@
-import { execQueries } from './exchange.js'
+import { execQueries } from '../lib/exchange.js'
 import { RECEIVE } from '../constants/ActionTypes'
 
 // this has to receive the params as well as second arg
