@@ -84,7 +84,7 @@ class MainSectionUI extends Component {
   }
 }
 
-// TODO: actual GraphQL Query
+// Create a Data component around the MainSectionUI (container).
 export default createContainer(MainSectionUI, {
   queries: {
     todos: 'graphql query goes here'
