@@ -1,3 +1,6 @@
+// The App Component renders a Header and MainSection.
+// It provides the components with redux action creators.
+
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { Connector } from 'redux/react'
@@ -6,7 +9,7 @@ import MainSection from '../components/MainSection'
 import * as TodoActions from '../actions/TodoActions'
 
 export default class TodoApp extends Component {
-  render() {
+  render () {
     return (
       <Connector>
         {this.renderChild}
@@ -14,7 +17,7 @@ export default class TodoApp extends Component {
     )
   }
 
-  renderChild({ todos, dispatch }) {
+  renderChild ({ todos, dispatch }) {
     const actions = bindActionCreators(TodoActions, dispatch)
     return (
       <div>
