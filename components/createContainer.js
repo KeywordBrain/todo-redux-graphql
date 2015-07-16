@@ -13,7 +13,7 @@
 // when receives messages in a chat application).
 
 import React, { Component, PropTypes } from 'react'
-import { connect } from 'redux/react'
+import { connect } from 'react-redux'
 import { executeQueries } from '../actions/DataActions.js'
 
 class _Data extends Component {
@@ -54,7 +54,7 @@ export default function (Component, options) {
     if (!~index) {
       return {}
     }
-    let localState = {
+    const localState = {
       data: state.res[index] || null
     }
     return localState

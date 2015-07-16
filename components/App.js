@@ -3,16 +3,17 @@
 
 import React, { Component } from 'react'
 import TodoApp from './TodoApp'
-import { createRedux } from 'redux'
-import { Provider } from 'redux/react'
+import { createStore, combineReducers } from 'redux'
+import { Provider } from 'react-redux'
 import * as reducers from '../reducers'
 
-const redux = createRedux(reducers)
+const reducer = combineReducers(reducers)
+const redux = createStore(reducer)
 
 export default class App extends Component {
   render () {
     return (
-      <Provider redux={redux}>
+      <Provider store={redux}>
         {() => <TodoApp />}
       </Provider>
     )
